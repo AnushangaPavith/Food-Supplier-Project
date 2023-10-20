@@ -53,12 +53,11 @@ public class ProductController {
                 .orElseThrow(() -> new ResourceNotFoundException("Product does not exist with id: " + id));
 
         product.setName(productDetails.getName());
-        product.setDescription(productDetails.getDescription());
         product.setPrice(productDetails.getPrice());
         product.setQuantity(productDetails.getQuantity());
-        product.setDiscountPrice(productDetails.getDiscountPrice());
-        product.setDiscountPercentage(productDetails.getDiscountPercentage());
-        
+        product.setCategory(productDetails.getCategory());
+        product.setNutritionalInformation(productDetails.getNutritionalInformation());
+        //product.setProductAvailability(productDetails.isProductAvailability());
 
         Product updatedProduct = productRepository.save(product);
         return ResponseEntity.ok(updatedProduct);
@@ -75,7 +74,10 @@ public class ProductController {
         response.put("deleted", Boolean.TRUE);
         return ResponseEntity.ok(response);
     }
+
+    @GetMapping("/products/names")
+    public ResponseEntity<List<String>> getProductNames() {
+        List<String> productNames = productRepository.getProductNames();
+        return ResponseEntity.ok(productNames);
+    }
 }
-
-
-

@@ -28,26 +28,28 @@ public class Product {
     @Column(name = "quantity")
     private Long quantity;
 
-    @Column(name = "discount_price")
-    private Double discountPrice;
-
-    @Column(name = "discount_percentage")
-    private Double discountPercentage;
-
+    @Column(name = "category")
+    private String category;
     
+    @Column(name = "nutritional_information")
+    private String nutritionalInformation;
+    
+   // @Column(name = "product_availability")
+    //private boolean productAvailability;    
 
     public Product() {
     }
 
-    public Product(String name, String description, Double price, Long quantity, Double discountPrice, Double discountPercentage) {
+    public Product(String name, String description, Double price, Long quantity, String category, String nutritionalInformation, boolean productAvailability) {
         this.name = name;
         this.description = description;
         this.price = price;
         this.quantity = quantity;
-        this.discountPrice = discountPrice;
-        this.discountPercentage = discountPercentage;
-        
+        this.category = category;
+        this.nutritionalInformation = nutritionalInformation;
+       // this.productAvailability = productAvailability;
     }
+
     
     public long getId() {
 		return id;
@@ -91,23 +93,35 @@ public class Product {
      this.quantity = quantity;
  }
 
- // Getter and Setter for 'discountPrice'
- public Double getDiscountPrice() {
-     return discountPrice;
- }
+ // Getter and Setter for 'Category'
+//Getter and Setter for 'category'
+public String getCategory() {
+  return category;
+}
 
- public void setDiscountPrice(Double discountPrice) {
-     this.discountPrice = discountPrice;
- }
+public void setCategory(String category) {
+  this.category = category;
+}
+//Getter and Setter for 'nutritionalInformation'
+public String getNutritionalInformation() {
+ return nutritionalInformation;
+}
+
+public void setNutritionalInformation(String nutritionalInformation) {
+ this.nutritionalInformation = nutritionalInformation;
+}
+//Getter and Setter for 'productAvailability'
+//public boolean isProductAvailability() {
+// return productAvailability;
+//}
+//
+//public void setProductAvailability(boolean productAvailability) {
+// this.productAvailability = productAvailability;
+//}
+
 
  // Getter and Setter for 'discountPercentage'
- public Double getDiscountPercentage() {
-     return discountPercentage;
- }
-
- public void setDiscountPercentage(Double discountPercentage) {
-     this.discountPercentage = discountPercentage;
- }
+ 
 
 
 
