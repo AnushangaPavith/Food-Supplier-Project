@@ -1,37 +1,40 @@
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
-import SignIn from './Pages/SignIn'
+import Register from './Pages/Register'
 import Login from './Pages/Login';
 import ViewProducts from './Pages/ViewProducts';
 import AddProduct from './Pages/AddProducts';
 import ModifyProducts from './Pages/ModifyProducts';
-import Profile from './Pages/Profile';
+import FoodSupplier from './Pages/FoodSupplier';
 import Inventory from './Pages/Inventory';
+import UpdateProductComponent from './Pages/UpdateProductComponent';
 import ProductDetail from './Pages/ProductDetailView';
 import AddRecord from './Pages/AddRecord';
-
+import { UserProvider } from './UserContext';
 
 function App() {
   return (
+    <UserProvider>
     <div>
       <Router>
         <div className="container">
           <Routes>
-            <Route path="/" exact element={<Login />}></Route>
-            <Route path="/SignIn" element={<SignIn />}></Route>
-            <Route path="/products" element={<ViewProducts />}></Route>
+            <Route path="/" exact element={<Login />}></Route>                {/* Login page */}
+            <Route path="/register" element={<Register />}></Route>           {/* Register page */}
+            <Route path="/products" element={<ViewProducts />}></Route>       {/* When a user login, show this page */}
             <Route path="/modifyProduct" element={<ModifyProducts />}></Route>
             <Route path="/product/:id" element={<ProductDetail />} />
             <Route path="/addProducts" element={<AddProduct />}></Route>
-            <Route path='/profile' element={<Profile />}></Route>
+            <Route path = "/update-products/:id" element = {<UpdateProductComponent />}></Route>
+            <Route path='/foodSupplier' element={<FoodSupplier />}></Route>
             <Route path='/inventory' element={<Inventory />}></Route>
             <Route path='/addRecord' element={<AddRecord />}></Route>
           </Routes>
         </div>
       </Router>
     </div>
-    
+    </UserProvider>
   );
 }
 

@@ -12,8 +12,8 @@ function AddProduct() {
 		price: '',
 		quantity: '',
 		category: '',
-		nutritionalInformation: ''
-
+		nutritionalInformation: '',
+		productImg:''
 	});
 
 	const saveProduct = (e) => {
@@ -31,7 +31,6 @@ function AddProduct() {
 	const changeNameHandler = (event) => {
 		setProduct({ ...product, name: event.target.value });
 	};
-
 	const changeDescriptionHandler = (event) => {
 		setProduct({ ...product, description: event.target.value });
 	};
@@ -46,6 +45,9 @@ function AddProduct() {
 	};
 	const changeNutritionalInformationHandler = (event) => {
 		setProduct({ ...product, nutritional_information: event.target.value });
+	};
+	const changeNProductImage = (event) => {
+		setProduct({ ...product, productImg: event.target.value });
 	};
 
 	return (
@@ -119,6 +121,16 @@ function AddProduct() {
 										className='form-control'
 										value={product.nutritional_information}
 										onChange={changeNutritionalInformationHandler}
+									/>
+								</div>
+								<div className='form-group'>
+									<label> Image</label>
+									<input
+										placeholder='Add product image URL'
+										name='product_img'
+										className='form-control'
+										value={product.productImg}
+										onChange={changeNProductImage}
 									/>
 								</div>
 								<div className='product-details-buttons'>

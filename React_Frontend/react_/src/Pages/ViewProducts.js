@@ -3,15 +3,19 @@ import React, { useEffect, useState } from "react";
 import Layout from "../components/Layout";
 import ProductBox from "../components/ProductBoxView"; // Adjust the import path
 import ProductService from "../services/ProductService"; // Import your service
+import { useUser } from '../UserContext'; // Import the UserContext
 
 const ViewProducts = () => {
   const [products, setProducts] = useState([]);
+  const { userName } = useUser();
+
+  // console.log({userName});
 
   useEffect(() => {
     // Fetch products when the component mounts
     ProductService.getProducts()
       .then((response) => {
-        setProducts(response.data); // Assuming the API response contains product data
+        setProducts(response.data);
       })
       .catch((error) => {
         console.error("Error fetching products:", error);

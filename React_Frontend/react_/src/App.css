@@ -200,3 +200,15 @@ a:active { text-decoration: none; }
   display: flex;
   justify-content: space-between;
 }
+
+.detail-img {
+  width: 35%;
+}
+
+.from-detail-img {
+  text-align: center;
+}
+
+.instruction {
+  white-space: nowrap; /* Prevent text from wrapping */
+}

@@ -28,6 +28,7 @@ const ProductDetailView = () => {
                 quantity: productData.quantity,
                 category: productData.category,
                 nutritionalInformation: productData.nutritionalInformation,
+                productImg: productData.productImg
 
             });
         });
@@ -67,6 +68,9 @@ const ProductDetailView = () => {
                         <h2 className="text-center">Product Details</h2>
                         <div className="card-body">
                             <form>
+                                <div className="form-group from-detail-img">
+                                    <img src={product.productImg} className="detail-img" alt={product.name} />
+                                </div>
                                 <div className="form-group">
                                     <label> Product Name</label>
                                     <input

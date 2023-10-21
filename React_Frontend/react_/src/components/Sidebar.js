@@ -24,7 +24,7 @@ const Sidebar = () => {
       <Link to="/addRecord" className={location.pathname === "/addRecord" ? "active" : ""}>
         <FontAwesomeIcon icon={faFile}  className="fa-icon"/> Add New Record
       </Link>
-      <Link to="/profile" className={location.pathname === "/profile" ? "active" : ""}>
+      <Link to="/foodSupplier" className={location.pathname === "/foodSupplier" ? "active" : ""}>
         <FontAwesomeIcon icon={faUser}  className="fa-icon"/> Profile
       </Link>
       {/* Add more links for other pages */}

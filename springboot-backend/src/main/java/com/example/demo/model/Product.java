@@ -34,8 +34,8 @@ public class Product {
     @Column(name = "nutritional_information")
     private String nutritionalInformation;
     
-   // @Column(name = "product_availability")
-    //private boolean productAvailability;    
+    @Column(name = "product_img")
+    private String productImg;
 
     public Product() {
     }
@@ -50,7 +50,17 @@ public class Product {
        // this.productAvailability = productAvailability;
     }
 
-    
+    public Product(long id, String name, String description, Double price, Long quantity, String category, String nutritionalInformation, String productImg) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.quantity = quantity;
+        this.category = category;
+        this.nutritionalInformation = nutritionalInformation;
+        this.productImg = productImg;
+    }
+
     public long getId() {
 		return id;
 	}
@@ -110,21 +120,13 @@ public String getNutritionalInformation() {
 public void setNutritionalInformation(String nutritionalInformation) {
  this.nutritionalInformation = nutritionalInformation;
 }
-//Getter and Setter for 'productAvailability'
-//public boolean isProductAvailability() {
-// return productAvailability;
-//}
-//
-//public void setProductAvailability(boolean productAvailability) {
-// this.productAvailability = productAvailability;
-//}
 
 
- // Getter and Setter for 'discountPercentage'
- 
+    public String getProductImg() {
+        return productImg;
+    }
 
-
-
+    public void setProductImg(String productImg) {
+        this.productImg = productImg;
+    }
 }
-
-

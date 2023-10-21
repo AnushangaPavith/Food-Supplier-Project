@@ -6,7 +6,7 @@ const ProductBox = ({ product }) => {
   return (
     <Link to={`/product/${product.id}`} className="product-box-link">
       <div className="product-box">
-        <img src={img} alt={product.name} />
+        <img src={product.productImg} alt={product.name} />
         <h5>{product.name}</h5>
         <p>Unit Price: Rs.{product.price}</p>
       </div>

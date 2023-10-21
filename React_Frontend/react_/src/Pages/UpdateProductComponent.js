@@ -14,7 +14,8 @@ function UpdateProductComponent(props) {
     price: '',
     quantity: '',
     category: '',
-    nutritionalInformation: ''
+    nutritionalInformation: '',
+    productImg:''
   });
 
   useEffect(() => {
@@ -28,7 +29,7 @@ function UpdateProductComponent(props) {
         quantity: productData.quantity,
         category: productData.category,
         nutritionalInformation: productData.nutritionalInformation,
-
+        productImg: productData.productImg
       });
     });
   }, [id]);
@@ -44,8 +45,7 @@ function UpdateProductComponent(props) {
       quantity: product.quantity,
       category: product.category,
       nutritionalInformation: product.nutritionalInformation,
-
-
+      productImg: product .productImg
     };
 
     console.log('updatedProduct =>' + JSON.stringify(updatedProduct));
@@ -75,6 +75,9 @@ function UpdateProductComponent(props) {
   const changeNutritionalInformationHandler = (event) => {
     setProduct({ ...product, nutritionalInformation: event.target.value });
   };
+  const changeNProductImage = (event) => {
+		setProduct({ ...product, productImg: event.target.value });
+	};
 
   return (
     <Layout>
@@ -149,6 +152,16 @@ function UpdateProductComponent(props) {
                     onChange={changeNutritionalInformationHandler}
                   />
                 </div>
+                <div className='form-group'>
+									<label> Image</label>
+									<input
+										placeholder='Add product image URL'
+										name='product_img'
+										className='form-control'
+										value={product.productImg}
+										onChange={changeNProductImage}
+									/>
+								</div>
                 <button className="btn btn-success" onClick={updateProduct}>
                   Save
                 </button>

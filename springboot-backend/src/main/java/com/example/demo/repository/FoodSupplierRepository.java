@@ -8,7 +8,6 @@ import com.example.demo.model.FoodSupplier;
 
 @Repository
 public interface FoodSupplierRepository extends JpaRepository<FoodSupplier, Long>{
-	
 
 }
 

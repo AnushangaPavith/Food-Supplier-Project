@@ -57,6 +57,7 @@ public class ProductController {
         product.setQuantity(productDetails.getQuantity());
         product.setCategory(productDetails.getCategory());
         product.setNutritionalInformation(productDetails.getNutritionalInformation());
+        product.setProductImg(productDetails.getProductImg());
         //product.setProductAvailability(productDetails.isProductAvailability());
 
         Product updatedProduct = productRepository.save(product);

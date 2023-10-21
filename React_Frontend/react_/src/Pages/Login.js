@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import bgImg from "../assets/Grocery Delivery Final.png";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+import { useUser } from '../UserContext';
 
 export default function Login() {
     const navigate = useNavigate();
@@ -12,11 +13,12 @@ export default function Login() {
         formState: { errors },
     } = useForm();
     const [loginError, setLoginError] = useState(null);
+    const { username, setUser } = useUser();
 
     const onSubmit = (data) => {
         // Replace this with your actual login logic, e.g., sending a request to a server.
         const requestData = {
-            userName: data.username, // Correct field name
+            name: data.name,
             password: data.password,
         };
         console.log(requestData);
@@ -26,10 +28,11 @@ export default function Login() {
                 console.log(response);
                 // Check if the response contains the expected JSON structure and a 200 status code
                 if (
-                    response.data.userID !== undefined &&
-                    response.data.userName !== undefined &&
+                    response.data.id !== undefined &&
+                    response.data.name !== undefined &&
                     response.status === 200
                 ) {
+                    setUser(response.data.name);
                     console.log("Login successful");
                     navigate('/products');
                     // You can navigate to the "/ViewProducts" route here, for example:
@@ -51,7 +54,7 @@ export default function Login() {
                 <div className="col-1">
                     <h2>Login</h2>
 
-                    <span>Enter your credentials to access the service</span>
+                    <span className="instruction">Enter your credentials to access <br></br> the service</span>
 
                     <form
                         id="form"
@@ -60,7 +63,7 @@ export default function Login() {
                     >
                         <input
                             type="text"
-                            {...register("username", { required: true })}
+                            {...register("name", { required: true })}
                             placeholder="Username"
                         />
                         {errors.username && (
@@ -75,14 +78,23 @@ export default function Login() {
                         {errors.password && (
                             <p className="error-message">Password is required</p>
                         )}
+                        <div>
+                            <Link
+                                className="text-decoration-none btn btn-sm btn-info custom-button "
+                                to={"/register"}
+                                style={{ backgroundColor: "green", color: "white" }}
+                            >
+                                {" "}Register{" "}
+                            </Link>
 
-                        <button
-                            type="submit"
-                            className="btn btn-sm btn-info custom-button"
-                            style={{ backgroundColor: "green", color: "white" }}
-                        >
-                            Sign In
-                        </button>
+                            <button
+                                type="submit"
+                                className="btn btn-sm btn-info custom-button"
+                                style={{ backgroundColor: "green", color: "white" }}
+                            >
+                                Login
+                            </button>
+                        </div>
                     </form>
                     {loginError && <p className="error-message">{loginError}</p>}
                 </div>
