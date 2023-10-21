@@ -23,13 +23,13 @@ function App() {
             <Route path="/" exact element={<Login />}></Route>                {/* Login page */}
             <Route path="/register" element={<Register />}></Route>           {/* Register page */}
             <Route path="/products" element={<ViewProducts />}></Route>       {/* When a user login, show this page */}
-            <Route path="/modifyProduct" element={<ModifyProducts />}></Route>
-            <Route path="/product/:id" element={<ProductDetail />} />
+            <Route path="/modifyProduct" element={<ModifyProducts />}></Route>      {/* Update delete product page */}
+            <Route path="/product/:id" element={<ProductDetail />} />               {/* Product details page. "id is replaced by product ID when selecting a product" */}
             <Route path="/addProducts" element={<AddProduct />}></Route>
             <Route path = "/update-products/:id" element = {<UpdateProductComponent />}></Route>
-            <Route path='/foodSupplier' element={<FoodSupplier />}></Route>
             <Route path='/inventory' element={<Inventory />}></Route>
             <Route path='/addRecord' element={<AddRecord />}></Route>
+            <Route path='/foodSupplier' element={<FoodSupplier />}></Route>
           </Routes>
         </div>
       </Router>
