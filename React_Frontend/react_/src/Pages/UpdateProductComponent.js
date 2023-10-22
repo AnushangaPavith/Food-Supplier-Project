@@ -60,7 +60,7 @@ function UpdateProductComponent(props) {
 				onCancel: () => {
 					// Cancel deletion
 					navigate('/products');
-				},
+				}
 			});
 		});
 	};

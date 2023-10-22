@@ -3,6 +3,7 @@ import ProductService from '../services/ProductService';
 import { useNavigate } from 'react-router-dom';
 import Layout from '../components/Layout';
 import CustomConfirmAlert from '../components/ConfirmPopup';
+import InformAlert from '../components/InfoPopup';
 
 function AddProduct() {
 
@@ -14,28 +15,36 @@ function AddProduct() {
 		quantity: '',
 		category: '',
 		nutritionalInformation: '',
-		productImg:''
+		productImg: ''
 	});
 
 	const saveProduct = (e) => {
 		e.preventDefault();
 
 		ProductService.addProduct(product).then((res) => {
-			navigate('/products');
+			// Inform alert
+			InformAlert({
+				title: 'New product added',
+				message: '',
+				onCancel: () => {
+					// Cancel deletion
+					navigate('/products');
+				}
+			});
 		});
 	};
 
 	const cancel = () => {
 		CustomConfirmAlert({
-            title: 'Confirm',
-            message: 'Are you sure you want cancel this operation?',
-            onConfirm: () => {
-                navigate('/products');
-            },
-            onCancel: () => {
-                // Cancel deletion
-            },
-        });
+			title: 'Confirm',
+			message: 'Are you sure you want cancel this operation?',
+			onConfirm: () => {
+				navigate('/products');
+			},
+			onCancel: () => {
+				// Cancel deletion
+			},
+		});
 	};
 
 	const changeNameHandler = (event) => {
