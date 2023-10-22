@@ -249,52 +249,70 @@ a:active { text-decoration: none; }
   white-space: nowrap; /* Prevent text from wrapping */
 }
 
-/* Custom styles for the confirm alert dialog */
-.react-confirm-alert-overlay {
-  background: rgba(255, 255, 255, 0.8) !important; /* Background overlay color */
+/* CONFIRM POPUP CSS */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
   display: flex;
-  justify-content: center;
   align-items: center;
-}
-
-.react-confirm-alert-body {
-  background: #fff; /* Background color of the dialog body */
-  border-radius: 10px;
-  padding: 20px;
-  width: 400px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-.react-confirm-alert-title {
-  font-size: 18px  !important;
-  color: #333; /* Title color */
-}
-
-.react-confirm-alert-message {
-  font-size: 16px;
-  color: #666; /* Message color */
-}
-
-.react-confirm-alert-button-group {
-  display: flex;
   justify-content: center;
-  margin-top: 20px;
+  z-index: 1000; /* Ensure it's above other content */
 }
 
-.react-confirm-alert-button {
+.custom-confirm-alert {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  text-align: center;
+  max-width: 500px;
+  border-radius: 15px;
+}
+
+.custom-confirm-alert h1 {
+  font-size: 1.5em;
+  margin: 0 0 20px;
+}
+
+.custom-confirm-alert p {
+  margin: 0 0 20px;
+}
+
+.custom-confirm-alert button {
   margin: 0 10px;
-  padding: 10px 20px;
+  padding: 5px 10px;
   border: none;
-  border-radius: 5px;
   cursor: pointer;
 }
 
-.react-confirm-alert-button.yes {
-  background-color: #f00; /* Yes button background color */
-  color: #fff; /* Yes button text color */
+.popup-btn {
+  width: 80px;
+  border-radius: 5px;
 }
 
-.react-confirm-alert-button.no {
-  background-color: #00f; /* No button background color */
-  color: #fff; /* No button text color */
+.btn-yes {
+  background: #DC3545; /* Red color */
+  color: #fff;
+}
+
+.btn-no {
+  background: #34A853; /* Blue color */
+  color: #fff;
+}
+
+.btn-yes:hover {
+  background-color: #BE2E3C;
+}
+
+.btn-no:hover {
+  background-color: #26823c;
 }

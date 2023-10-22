@@ -2,13 +2,24 @@ import React, { useState, useEffect } from 'react';
 import ProductService from '../services/ProductService';
 import { Link } from 'react-router-dom';
 import Layout from '../components/Layout';
+import CustomConfirmAlert from '../components/ConfirmPopup';
 
 function ModifyProducts() {
     const [products, setProducts] = useState([]);
 
     const deleteProduct = (id) => {
-        ProductService.deleteProduct(id).then((res) => {
-            setProducts(products.filter((product) => product.id !== id));
+
+        CustomConfirmAlert({
+            title: 'Confirm Deletion',
+            message: 'Are you sure you want to delete this item?',
+            onConfirm: () => {
+                ProductService.deleteProduct(id).then((res) => {
+                    setProducts(products.filter((product) => product.id !== id));
+                });
+            },
+            onCancel: () => {
+                // Cancel deletion
+            },
         });
     };
     useEffect(() => {

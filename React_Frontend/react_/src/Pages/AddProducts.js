@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ProductService from '../services/ProductService';
 import { useNavigate } from 'react-router-dom';
 import Layout from '../components/Layout';
+import CustomConfirmAlert from '../components/ConfirmPopup';
 
 function AddProduct() {
 
@@ -25,7 +26,16 @@ function AddProduct() {
 	};
 
 	const cancel = () => {
-		navigate('/products');
+		CustomConfirmAlert({
+            title: 'Confirm',
+            message: 'Are you sure you want cancel this operation?',
+            onConfirm: () => {
+                navigate('/products');
+            },
+            onCancel: () => {
+                // Cancel deletion
+            },
+        });
 	};
 
 	const changeNameHandler = (event) => {
@@ -134,7 +144,7 @@ function AddProduct() {
 									/>
 								</div>
 								<div className='product-add-buttons'>
-									<button className='btn btn-danger form-submit-btn' onClick={cancel} style={{ marginLeft: '5px' }}>
+									<button className='btn btn-danger form-submit-btn' onClick={cancel} style={{ marginLeft: '5px' }} type='button'>
 										Cancel
 									</button>
 									<button className='btn btn-success form-submit-btn' onClick={saveProduct}>

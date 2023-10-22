@@ -3,11 +3,13 @@ import InventoryService from '../services/InventoryService';
 import ProductService from '../services/ProductService';
 import { useNavigate } from 'react-router-dom';
 import Layout from '../components/Layout';
+import CustomConfirmAlert from '../components/ConfirmPopup';
+
 
 function AddRecord() {
     const navigate = useNavigate();
     const [product, setProduct] = useState({
-        date: '',
+        date: new Date().toISOString().substr(0, 10), // Get the current date in YYYY-MM-DD format
         productName: '',
         quantity: '',
         price: '',
@@ -31,7 +33,17 @@ function AddRecord() {
     };
 
     const cancel = () => {
-        navigate('/inventory');
+        // Show popup
+        CustomConfirmAlert({
+            title: 'Confirm',
+            message: 'Are you sure you want cancel this operation?',
+            onConfirm: () => {
+                navigate('/inventory');
+            },
+            onCancel: () => {
+                // Cancel deletion
+            },
+        });
     };
 
     const handleChange = (event) => {
@@ -124,7 +136,7 @@ function AddRecord() {
                                     />
                                 </div>
                                 <div className='product-add-buttons'>
-                                    <button className='btn btn-danger form-submit-btn' onClick={cancel} style={{ marginLeft: '5px' }}>
+                                    <button className='btn btn-danger form-submit-btn' onClick={cancel} style={{ marginLeft: '5px' }} type='button'>
                                         Cancel
                                     </button>
                                     <button className='btn btn-success form-submit-btn' onClick={saveRecord}>

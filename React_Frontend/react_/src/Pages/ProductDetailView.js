@@ -32,7 +32,7 @@ const ProductDetailView = () => {
 
             });
         });
-    }, [id]);
+    }, [product, id]);
 
     const goBack = (e) => {
         e.preventDefault();
@@ -49,9 +49,6 @@ const ProductDetailView = () => {
     };
     const changePriceHandler = (event) => {
         setProduct({ ...product, price: event.target.value });
-    };
-    const changeQuantityHandler = (event) => {
-        setProduct({ ...product, quantity: event.target.value });
     };
     const changeCategoryHandler = (event) => {
         setProduct({ ...product, category: event.target.value });
