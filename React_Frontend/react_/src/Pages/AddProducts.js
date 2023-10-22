@@ -44,7 +44,7 @@ function AddProduct() {
 		setProduct({ ...product, category: event.target.value });
 	};
 	const changeNutritionalInformationHandler = (event) => {
-		setProduct({ ...product, nutritional_information: event.target.value });
+		setProduct({ ...product, nutritionalInformation: event.target.value });
 	};
 	const changeNProductImage = (event) => {
 		setProduct({ ...product, productImg: event.target.value });
@@ -119,7 +119,7 @@ function AddProduct() {
 										placeholder='Nutritional Information'
 										name='nutritional_information'
 										className='form-control'
-										value={product.nutritional_information}
+										value={product.nutritionalInformation}
 										onChange={changeNutritionalInformationHandler}
 									/>
 								</div>
@@ -133,14 +133,14 @@ function AddProduct() {
 										onChange={changeNProductImage}
 									/>
 								</div>
-								<div className='product-details-buttons'>
-									<button className='btn btn-success' onClick={saveProduct}>
+								<div className='product-add-buttons'>
+									<button className='btn btn-danger form-submit-btn' onClick={cancel} style={{ marginLeft: '5px' }}>
+										Cancel
+									</button>
+									<button className='btn btn-success form-submit-btn' onClick={saveProduct}>
 										Save
 									</button>
 
-									<button className='btn btn-danger' onClick={cancel} style={{ marginLeft: '5px' }}>
-										Cancel
-									</button>
 								</div>
 							</form>
 						</div>

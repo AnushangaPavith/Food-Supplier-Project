@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import img from "../assets/Grocery Delivery Final.png";
 
 const ProductBox = ({ product }) => {
   return (

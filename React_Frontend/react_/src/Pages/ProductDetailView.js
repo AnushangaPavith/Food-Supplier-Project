@@ -141,8 +141,8 @@ const ProductDetailView = () => {
                                         readOnly={true}
                                     />
                                 </div>
-                                <div className="product-details-buttons">
-                                    <button className="btn btn-success" onClick={goBack}>
+                                <div className="product-details-buttons product-details-buttons">
+                                    <button className="btn btn-success form-submit-btn" onClick={goBack}>
                                         Ok
                                     </button>
                                 </div>

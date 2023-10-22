@@ -123,12 +123,12 @@ function AddRecord() {
                                         onChange={handleChange}
                                     />
                                 </div>
-                                <div className='product-details-buttons'>
-                                    <button className='btn btn-success' onClick={saveRecord}>
-                                        Save
-                                    </button>
-                                    <button className='btn btn-danger' onClick={cancel} style={{ marginLeft: '5px' }}>
+                                <div className='product-add-buttons'>
+                                    <button className='btn btn-danger form-submit-btn' onClick={cancel} style={{ marginLeft: '5px' }}>
                                         Cancel
+                                    </button>
+                                    <button className='btn btn-success form-submit-btn' onClick={saveRecord}>
+                                        Save
                                     </button>
                                 </div>
                             </form>

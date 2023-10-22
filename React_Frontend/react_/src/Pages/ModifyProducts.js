@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import ProductService from '../services/ProductService';
 import { Link } from 'react-router-dom';
-import AddProductComponent from '../Pages/AddProductComponent';
-import { useNavigate } from 'react-router-dom';
 import Layout from '../components/Layout';
 
 function ModifyProducts() {
-
-    const navigate = useNavigate();
     const [products, setProducts] = useState([]);
 
     const deleteProduct = (id) => {
@@ -51,7 +47,7 @@ function ModifyProducts() {
                                 <td>
                                     <div className='product-details-buttons'>
                                         <Link
-                                            className="text-decoration-none btn btn-info"
+                                            className="btn btn-info form-update-btn"
                                             to={`/update-products/${product.id}`}
                                         >
                                             {' '}Update{' '}

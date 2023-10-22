@@ -106,10 +106,15 @@ body{
 
 /* styles.css */
 .custom-button {
-  background-color: green; /* Set the background color to green */
+  background-color: #34A853 !important; /* Set the background color to green */
+  border-color: #34A853 !important;
   color: white; /* Set the text color to white */
   margin-left: 20px; /* Adjust the left margin to move the button to the right */
   margin-top: 10px; /* Adjust the top margin to move the button down */
+}
+
+.custom-button:hover {
+  background-color: #26823c !important;
 }
 
 .register .col-2 img{
@@ -135,7 +140,8 @@ body{
   top: 0;
   width: 15%; /* Adjust the width to make the buttons wider */
   height: 100%;
-  background: #333;
+  background: #083d03;
+  /* background: #BCFFD7; */
   color: #fff;
   padding: 10px;
 }
@@ -147,7 +153,7 @@ body{
   margin-bottom: 10px;
   padding: 10px;
   text-decoration: none;
-  color: #fff;
+  color: #ffffff;
   border-radius: 8px;
 }
 
@@ -160,7 +166,7 @@ body{
 }
 
 .sidebar a.active {
-  background-color: #00c853;
+  background-color: #34A853;
 }
 
 /* Icons style */
@@ -196,9 +202,39 @@ a:active { text-decoration: none; }
 }
 
 /* BUTTONS */
-.product-details-buttons {
+.btn-success {
+  background-color: #34A853 !important;
+  border-color: #34A853 !important;
+}
+
+.btn-success:hover {
+  background-color: #26823c !important;
+  border-color: #26823c !important;
+}
+
+.product-add-buttons {
   display: flex;
   justify-content: space-between;
+}
+
+.product-details-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.form-submit-btn {
+  width: 150px;
+}
+
+.form-update-btn {
+  background-color: #34A853 !important;
+  border-color: #34A853 !important;
+  color: #fff !important;
+}
+
+.form-update-btn:hover {
+  background-color: #26823c !important;
+  border-color: #26823c !important;
 }
 
 .detail-img {
@@ -211,4 +247,54 @@ a:active { text-decoration: none; }
 
 .instruction {
   white-space: nowrap; /* Prevent text from wrapping */
+}
+
+/* Custom styles for the confirm alert dialog */
+.react-confirm-alert-overlay {
+  background: rgba(255, 255, 255, 0.8) !important; /* Background overlay color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.react-confirm-alert-body {
+  background: #fff; /* Background color of the dialog body */
+  border-radius: 10px;
+  padding: 20px;
+  width: 400px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.react-confirm-alert-title {
+  font-size: 18px  !important;
+  color: #333; /* Title color */
+}
+
+.react-confirm-alert-message {
+  font-size: 16px;
+  color: #666; /* Message color */
+}
+
+.react-confirm-alert-button-group {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.react-confirm-alert-button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.react-confirm-alert-button.yes {
+  background-color: #f00; /* Yes button background color */
+  color: #fff; /* Yes button text color */
+}
+
+.react-confirm-alert-button.no {
+  background-color: #00f; /* No button background color */
+  color: #fff; /* No button text color */
 }
