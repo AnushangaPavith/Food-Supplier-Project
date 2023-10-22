@@ -52,6 +52,8 @@ function UpdateProductComponent(props) {
 		console.log('updatedProduct =>' + JSON.stringify(updatedProduct));
 
 		ProductService.updateProduct(updatedProduct).then((res) => {
+
+			// Inform alert
 			InformAlert({
 				title: 'Product updated',
 				message: '',

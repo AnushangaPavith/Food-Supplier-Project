@@ -12,6 +12,7 @@ const Inventory = () => {
     }
 
     const deleteInventory = (id) => {
+        // Delete confirm popup
         CustomConfirmAlert({
             title: 'Confirm Deletion',
             message: 'Are you sure you want to delete this item?',
