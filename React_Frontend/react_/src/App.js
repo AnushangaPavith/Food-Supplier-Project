@@ -1,7 +1,8 @@
 
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
 
-import Register from './Pages/Register'
+import Register from './Pages/Register';
 import Login from './Pages/Login';
 import ViewProducts from './Pages/ViewProducts';
 import AddProduct from './Pages/AddProducts';
@@ -14,6 +15,10 @@ import AddRecord from './Pages/AddRecord';
 import { UserProvider } from './UserContext';
 
 function App() {
+  useEffect(() => {
+    document.title = "Food Supplier";
+  }, []);
+
   return (
     <UserProvider>
     <div>
