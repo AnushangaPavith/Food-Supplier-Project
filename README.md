@@ -28,9 +28,6 @@ Food Supplier is a front-end React project designed as part of a larger system. 
 ### Add Record Page
 ![Add Record Page](/screenshots/add_record_page.png)
 
-### Profile Page
-![Profile Page](/screenshots/profile_page.png)
-
 ## Technologies Used
 
 - **React**: Front-end framework
