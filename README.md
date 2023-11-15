@@ -2,7 +2,7 @@
 
 ## Overview
 
-Food Supplier is a front-end React project designed as part of a larger system. It includes key features such as:
+The Food Supplier React Project is a user-friendly web application designed to streamline inventory management for food suppliers. With a clean and intuitive interface, suppliers can effortlessly add, modify, and track their product offerings. The inventory system ensures accurate records of product distribution to various shops. Built using React for a responsive front-end, Java Spring Boot for a robust back-end, and MySQL for efficient data management, the project combines simplicity with powerful functionality to enhance the food supply chain experience. It includes key features such as:
 
 1. **Products Page**: Displays all products the supplier offers.
 2. **Add Products Page**: Allows users to add new products to the inventory.
