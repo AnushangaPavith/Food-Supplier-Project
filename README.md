@@ -13,24 +13,36 @@ Food Supplier is a front-end React project designed as part of a larger system. 
 
 ## Screenshots
 
+
 ### Products Page
-![Products Page](/screenshots/products_page.png)
+<p align="center">
+<img src="/screenshots/products_page.png" alt="Products Page" width="70%">
+</p>
 
 ### Add Products Page
-![Add Products Page](/screenshots/add_products_page.png)
+<p align="center">
+<img src="/screenshots/add_products_page.png" alt="Add Products Page" width="70%">
+</p>
 
 ### Modify Products Page
-![Modify Products Page](/screenshots/modify_products_page.png)
+<p align="center">
+<img src="/screenshots/modify_products_page.png" alt="Modify Products Page" width="70%">
+</p>
 
 ### Inventory Page
-![Inventory Page](/screenshots/inventory_page.png)
+<p align="center">
+<img src="/screenshots/inventory_page.png" alt="Inventory Page" width="70%">
+</p>
 
 ### Add Record Page
-![Add Record Page](/screenshots/add_record_page.png)
+<p align="center">
+<img src="/screenshots/add_record_page.png" alt="Add Record Page" width="70%">
+</p>
 
 ## Technologies Used
-
-- **React**: Front-end framework
-- **Java Spring Boot**: Back-end framework
-- **MySQL**: Database management system
+<p align="center">
+  <img src="https://cdn.freebiesupply.com/logos/thumbs/2x/react-1-logo.png" alt="React Logo" height="80">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Spring_Framework_Logo_2018.svg/1200px-Spring_Framework_Logo_2018.svg.png" alt="Spring Boot Logo" height="80">
+  <img src="https://upload.wikimedia.org/wikipedia/labs/8/8e/Mysql_logo.png" alt="MySQL Logo" height="80">
+</p>
 
