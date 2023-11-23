@@ -45,4 +45,3 @@ The Food Supplier React Project is a user-friendly web application designed to s
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Spring_Framework_Logo_2018.svg/1200px-Spring_Framework_Logo_2018.svg.png" alt="Spring Boot Logo" height="80">
   <img src="https://upload.wikimedia.org/wikipedia/labs/8/8e/Mysql_logo.png" alt="MySQL Logo" height="80">
 </p>
-
